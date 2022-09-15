@@ -1,0 +1,75 @@
+machine learning
+
+supervised learning - 
+    regression - linear logistic exponential 
+            stock markets
+    classification - neural networks - decision trees
+            image recognition
+
+unsupervised learning -
+    clustering anomaly detection neural networks
+
+reinforcement learning - feddback loop rewards
+    video game AI 
+
+logistic regression - input vector single output value (peceptrons)
+k - nearest neighbors - depending on value of k determines value of objkect
+suport vector machines - 
+decision trees - fewest steps to determine conclusion
+feedforwardd neural networks - mimic brain, flexible many outputs 
+
+neural networks - 
+hopfield neiral networks - all neurons are all connected
+feedforward neural netowrk - layers
+    convolutional neural networks - many layers 
+
+multilayer preceptron - 
+    fully connected architecture input vector -> several hidden layers -> output vector
+
+------------------------------------------------------------------------
+
+brain
+    neurons - dendrite , nucleus, axon, axon terminal
+
+bias inputs - 
+    wighted sum linear function
+    weight assigned to each input   
+    independent input is needed to move line vertically
+
+why need bias term - 
+    bias term is the y-intercept in a linear line
+    not input- back of nerual networks
+
+what wrong w/ weightred sums
+    values not constrained too large/small
+    linear function
+    not easily trained
+
+whats wrong with linear functions
+    catergorys near boundry not good enough
+
+activation functions
+    model desired threshold behavior
+    contrain output values
+    provide nonlinearity to neurons
+    enable training by backpropagation(must be differentiable)
+
+binary step function
+    outputs 0 or 1
+logistic sigmoid function
+    output real nums betweeen 0 - 1
+hyperbolic tangent function 
+    limits outputs to real nums -1 to 1
+rectified linear unit function ReLU
+    outputs positive values unbounded
+
+perceptron 
+    inputs + bias + activation func = perceptron
+
+values = real numbers not integers
+weights = 1d vectors
+sum = dot product of vecotors
+sum goes into activation func
+
+logic gates
+    AND gate 

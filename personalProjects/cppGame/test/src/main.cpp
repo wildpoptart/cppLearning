@@ -1,43 +1,35 @@
-#include <SDL2/SDL.h>
+#include <exception>
+#include <string>
 #include <iostream>
+#include <SDL2\SDL.h>
 
-int main(int argv, char** args)
+#include "renderWindow.h"
+
+using namespace std;
+
+int main(int argc, char* args[])
 {
-    SDL_Init(SDL_INIT_EVERYTHING);
+    renderWindow window("GAME v1.0", 1280,720);
 
-    SDL_Window *window = SDL_CreateWindow("Hello SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+    SDL_Texture* grassTexture = window.loadTexture("gfx/play.png");
 
-    bool isRunning = true;
+    bool gameRunning=true;
     SDL_Event event;
 
-    while (isRunning)
+    while(gameRunning)
     {
-        while (SDL_PollEvent(&event))
+        while(SDL_PollEvent(&event))
         {
-            switch (event.type)
-            {
-            case SDL_QUIT:
-                isRunning = false;
-                break;
-
-            case SDL_KEYDOWN:
-                if (event.key.keysym.sym == SDLK_ESCAPE)
-                {
-                    isRunning = false;
-                }
-            }
+            if(event.type == SDL_QUIT)
+                gameRunning = false;
         }
-
-        SDL_RenderClear(renderer);
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-
-        SDL_RenderPresent(renderer);
+        window.clear();
+        window.render(grassTexture);
+        window.display();
     }
 
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-
+    window.cleanUp();
+    SDL_Quit()
+    ;
     return 0;
 }
