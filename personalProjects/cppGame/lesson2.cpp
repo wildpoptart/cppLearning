@@ -58,7 +58,7 @@ bool loadMedia()
     gHelloWorld = SDL_LoadBMP( "gfx/block.bmp" );
     if( gHelloWorld == NULL )
     {
-        printf( "Unable to load image %s! SDL Error: %s\n", h"gfx/block.bmp", SDL_GetError() );
+        printf( "Unable to load image %s! SDL Error: %s\n", "gfx/block.bmp", SDL_GetError() );
         success = false;
     }
 
